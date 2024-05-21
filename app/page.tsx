@@ -1,17 +1,7 @@
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Pricing from "@/components/Pricing";
-
 export default function Home() {
   return (
     <main>
-      <Header />
-      <Hero />
-      <Features />
-      <Pricing />
-      <Footer />
+      <h2>This is the home page</h2>
     </main>
   );
 }
