@@ -13,8 +13,8 @@ export function Navbar() {
       <div>
         <Navlinks />
       </div>
-      <div className="">
-        <Button>Sign In</Button>
+      <div className="mt-4">
+        <Button className="text-lg font-semibold">Sign In</Button>
       </div>
     </nav>
   );
