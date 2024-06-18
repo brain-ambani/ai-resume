@@ -1,13 +1,11 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import LandinHero from "@/components/landing-hero";
+import LandingNavbar from "@/components/landing-navbar";
 
 export default function Home() {
   return (
-    <main
-      className="flex min-h-screen flex-col
-    items-center justify-between p-6"
-    >
-      <Button>Button</Button>
-    </main>
+    <div className="h-full">
+      <LandingNavbar />
+      <LandinHero />
+    </div>
   );
 }
