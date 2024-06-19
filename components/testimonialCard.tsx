@@ -31,7 +31,7 @@ const TestimonialCard = () => {
         <div
           key={index}
           className="w-[280px] h-[280px] bg-black rounded-lg
-           flex flex-col p-5 gap-1 shadow-md border border-gray-500"
+           flex flex-col p-5  shadow-md border border-gray-500"
         >
           <Image
             src={testimonial.profile}
@@ -40,11 +40,11 @@ const TestimonialCard = () => {
             height={80}
             className="rounded-full object-cover"
           />
-          <h3 className="font-semibold text-white text-lg ">
+          <h3 className="font-semibold text-white text-lg mt-3">
             {testimonial.name}
           </h3>
-          <p className="text-muted-foreground text-xl">{testimonial.title}</p>
-          <p className="text-white">{testimonial.quote}</p>
+          <p className="text-violet-500 text-xl">{testimonial.title}</p>
+          <p className="text-white mt-2">{testimonial.quote}</p>
         </div>
       ))}
     </div>
