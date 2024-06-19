@@ -18,7 +18,7 @@ const TrustedBy = () => {
             Trusted by{" "}
             <span className="text-violet-500 font-bold">over 50 users</span>
           </h1>
-          <div className="mt-8 pb-10">
+          <div className="mt-4 pb-10">
             <p className="text-muted-foreground font-bold ">
               We have helped over 100 users create professional resumes
               <br />

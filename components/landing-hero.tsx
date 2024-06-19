@@ -13,7 +13,7 @@ const LandinHero = () => {
       justify-center text-center"
       >
         <h1
-          className="text-5xl md:text-7xl
+          className="text-5xl md:text-7xl text-white
          font-semibold"
         >
           Significantly impress{" "}
