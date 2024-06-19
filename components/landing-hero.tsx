@@ -13,11 +13,13 @@ const LandinHero = () => {
       justify-center text-center"
       >
         <h1
-          className="text-5xl md:text-7xl text-white
+          className="text-5xl md:text-7xl text-gray-400
          font-semibold"
         >
-          Significantly impress{" "}
-          <span className="text-violet-500 font-bold">potential employers</span>
+          Significantly impress your{" "}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 font-bold">
+            potential employers
+          </span>
         </h1>
 
         <div className="mt-8">

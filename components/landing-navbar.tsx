@@ -20,7 +20,9 @@ const LandingNavbar = () => {
         <div className="relative w-8 h-8 mr-4">
           <Image fill alt="Logo" src="/logo.svg" />
         </div>
-        <h1 className={cn("text-2xl font-bold", font.className)}>Genius</h1>
+        <h1 className={cn("text-2xl font-bold text-pink-600", font.className)}>
+          Genius
+        </h1>
       </Link>
       <div className="flex items-center gap-x-2">
         <Link href="/sign-in" className="pl-3 mb-14">

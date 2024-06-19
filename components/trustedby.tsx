@@ -1,11 +1,9 @@
-import Image from "next/image";
-
 const TrustedBy = () => {
   return (
     <div>
       <div
         className="flex flex-col items-center
-      justify-center container mx-auto py-1 px-4"
+      justify-center container mx-auto py-1 px-4 "
       >
         <div
           className="w-2/3 flex flex-col items-center
