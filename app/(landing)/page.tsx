@@ -1,5 +1,8 @@
+import CallToAction from "@/components/cta";
+import Footer from "@/components/footer";
 import LandinHero from "@/components/landing-hero";
 import LandingNavbar from "@/components/landing-navbar";
+import Pricing from "@/components/pricing";
 import Testimonials from "@/components/testimonials";
 import TrustedBy from "@/components/trustedby";
 
@@ -13,6 +16,9 @@ export default function Home() {
       <LandinHero />
       <TrustedBy />
       <Testimonials />
+      <Pricing />
+      <CallToAction />
+      <Footer />
     </div>
   );
 }
