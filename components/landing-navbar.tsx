@@ -24,7 +24,7 @@ const LandingNavbar = () => {
       </Link>
       <div className="flex items-center gap-x-2">
         <Link href="/sign-in" className="pl-3 mb-14">
-          <Button>Sign in</Button>
+          <Button variant="secondary">Sign in</Button>
         </Link>
       </div>
     </nav>

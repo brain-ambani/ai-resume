@@ -3,7 +3,7 @@ import LandingNavbar from "@/components/landing-navbar";
 
 export default function Home() {
   return (
-    <div className="h-full">
+    <div className="">
       <LandingNavbar />
       <LandinHero />
     </div>
