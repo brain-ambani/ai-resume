@@ -17,7 +17,7 @@ const LandinHero = () => {
          font-semibold"
         >
           Significantly impress{" "}
-          <span className="text-blue-500 font-bold">potential employers</span>
+          <span className="text-violet-500 font-bold">potential employers</span>
         </h1>
 
         <div className="mt-8">
@@ -30,7 +30,7 @@ const LandinHero = () => {
         <div className="mt-8">
           <Button
             variant="ghost"
-            className="bg-blue-500
+            className="bg-violet-500
           hover:text-muted-foreground"
           >
             <Link href="/register">Get Started</Link>
