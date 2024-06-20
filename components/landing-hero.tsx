@@ -32,8 +32,8 @@ const LandinHero = () => {
         <div className="mt-8">
           <Button
             variant="ghost"
-            className="bg-violet-500
-          hover:text-muted-foreground"
+            className="w-48 text-xl font-semibold bg-violet-500
+          hover:text-violet-500 "
           >
             <Link href="/register">Get Started</Link>
           </Button>
