@@ -1,6 +1,8 @@
+import ResumeCard from "@/components/resume-card";
+
 export default function Home() {
   return (
-    <div>
+    <div className="m-8">
       <div className="mb-8 space-y-4">
         <h2 className="text-2xl md:text-4xl font-bold text-center">
           Build your Resume with Genius AI
@@ -12,6 +14,9 @@ export default function Home() {
           Create a professional resume in minutes with our AI-powered resume
           builder.
         </p>
+        <div className="p-6">
+          <ResumeCard />
+        </div>
       </div>
     </div>
   );
