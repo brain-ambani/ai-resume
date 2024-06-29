@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 
 const CallToAction = () => {
@@ -11,13 +12,15 @@ const CallToAction = () => {
           Sign up for free. No credit card required. Lorem ipsum dolor sit amet
           consectetur, adipisicing elit. Veritatis, explicabo.
         </p>
-        <Button
-          variant="secondary"
-          className="w-64 bg-violet-700
+        <Link href="/sign-up">
+          <Button
+            variant="secondary"
+            className="w-64 bg-violet-700
         text-white font-semibold text-xl hover:bg-violet-800 transition"
-        >
-          Get started
-        </Button>
+          >
+            Get started
+          </Button>
+        </Link>
       </div>
     </div>
   );
