@@ -35,7 +35,7 @@ const LandinHero = () => {
             className="w-48 text-xl font-semibold bg-violet-500
           hover:text-violet-500 "
           >
-            <Link href="/register">Get Started</Link>
+            <Link href="/sign-up">Get Started</Link>
           </Button>
         </div>
       </div>
