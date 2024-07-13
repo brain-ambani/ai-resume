@@ -1,6 +1,9 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-const Header = () => {
+import { checkUser } from "@/lib/checkUser";
+
+const Header = async () => {
+  const User = await checkUser();
   return (
     <nav className="w-3/4 mx-auto py-4">
       <div className="flex justify-between items-center">
