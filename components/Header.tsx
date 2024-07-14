@@ -1,16 +1,19 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 import { checkUser } from "@/lib/checkUser";
+import { Button } from "./ui/button";
 
 const Header = async () => {
   const User = await checkUser();
   return (
-    <nav className="w-3/4 mx-auto py-4">
+    <nav className="container py-2">
       <div className="flex justify-between items-center">
-        <h2>Genius Resume</h2>
+        <h2>Genius</h2>
         <div>
           <SignedOut>
-            <SignInButton />
+            <SignInButton>
+              <Button>Sign In</Button>
+            </SignInButton>
           </SignedOut>
           <SignedIn>
             <UserButton />
