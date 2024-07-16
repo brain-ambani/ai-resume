@@ -28,11 +28,13 @@ model User {
 
 model Resume{
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  text String
+  title String
+  content String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relation to user
   userId String
   user User @relation(fields: [userId], references:[clerkUserId], onDelete: Cascade)
-  createdAt DateTime @default(now())
   @@index([userId])
 }
