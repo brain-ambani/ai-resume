@@ -29,6 +29,8 @@ model User {
 model Resume{
   id String @id @default(auto()) @map("_id") @db.ObjectId
   title String
+  email String?
+  name String?
   content String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
