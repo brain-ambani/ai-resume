@@ -13,10 +13,20 @@ async function addResume(title: string) {
   // Check for user
   if (!userId) return { error: "User not found" };
 
+  //   fetch user details
+  const user = await db.user.findUnique({
+    where: { clerkUserId: userId },
+    select: { email: true, name: true },
+  });
+
+  if (!user) return { error: "user not found" };
+
   const resume = await db.resume.create({
     data: {
       title,
       userId,
+      email: user.email,
+      name: user.name,
     },
   });
 

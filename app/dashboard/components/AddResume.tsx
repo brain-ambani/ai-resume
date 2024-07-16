@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { PlusSquare } from "lucide-react";
+import { Loader2, PlusSquare } from "lucide-react";
 
 import {
   Dialog,
@@ -17,14 +17,21 @@ import addResume from "@/app/actions/addResume";
 const AddResume = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [resumeTitle, setResumeTitle] = useState<string>();
+  const [loading, setLoading] = useState(false);
 
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   setResumeTitle(e.target.value);
   // };
 
   const onCreate = async () => {
+    setLoading(true);
     if (resumeTitle) {
       const response = await addResume(resumeTitle);
+
+      if (response) {
+        setLoading(false);
+      }
+
       console.log(response); // Handle response (e.g., show a success message)
       setOpenDialog(false); // Close dialog after creation
       setResumeTitle(""); // Reset title input
@@ -57,9 +64,13 @@ const AddResume = () => {
               <Button onClick={() => setOpenDialog(false)} variant="outline">
                 Cancel
               </Button>
-              <Button disabled={!resumeTitle} onClick={onCreate}>
-                Create
-              </Button>
+              <Button
+                disabled={!resumeTitle || loading}
+                onClick={onCreate}
+                {...(loading
+                  ? { children: <Loader2 className="animate-spin" /> }
+                  : { children: "Create" })}
+              ></Button>
             </div>
           </DialogHeader>
         </DialogContent>
