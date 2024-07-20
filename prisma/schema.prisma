@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  clerkUserId String @unique
+  email String @unique
+  name String?
+  imageUrl String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  resumes Resume[]
+
+}
+
+model Resume {
+  id                     String                    @id @default(auto()) @map("_id") @db.ObjectId
+  title                  String
+  summary                String?
+  skills                 Skill[]
+  professionalExperience ProfessionalExperience[]
+  achievements           String?
+  education              Education[]
+  certification          String?
+  projects               String?
+  reference              String? // Changed to lowercase for consistency
+  createdAt              DateTime                  @default(now())
+  updatedAt              DateTime                  @updatedAt
+  userId                 String                    @db.ObjectId
+  user                   User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Skill {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  resumeId  String   @db.ObjectId
+  resume    Resume   @relation(fields: [resumeId], references: [id])
+  name      String
+  level     String? // e.g., Beginner, Intermediate, Expert
+}
+
+model ProfessionalExperience {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  resumeId    String   @db.ObjectId
+  resume      Resume   @relation(fields: [resumeId], references: [id])
+  jobTitle    String
+  companyName String
+  startDate   DateTime
+  endDate     DateTime?
+  description String?
+}
+
+model Education {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  resumeId    String   @db.ObjectId
+  resume      Resume   @relation(fields: [resumeId], references: [id])
+  schoolName  String
+  degree      String
+  fieldOfStudy String
+  startDate   DateTime
+  endDate     DateTime?
+  description String?
+}
+
+// model Resume {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   title String
+//   summary       String?
+//   skills        Skill[]
+//   professionalExperience ProfessionalExperience[]
+//   achievements String?
+//   education     Education[]
+//   certification String?
+//   projects String?
+//   Reference String?
+
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   // Relation to user
+//   userId String
+//   user User @relation(fields: [userId], references:[clerkUserId], onDelete: Cascade)
+
+//   @@index([userId])
+  
+// }
