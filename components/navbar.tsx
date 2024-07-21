@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { auth } from "@clerk/nextjs/server";
-import { UserButton } from "@clerk/nextjs";
+import { SignedOut, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   const { userId } = auth();
@@ -14,11 +14,13 @@ const Navbar = () => {
             Genius
           </Link>
         </div>
-        <div className="flex items-center gap-6 text-xl font-semibold">
-          <Link href="/pricing">Pricing</Link>
-          <Link href="/faqs">FAQs</Link>
-          <Link href="/docs">Docs</Link>
-        </div>
+        <SignedOut>
+          <div className="flex items-center gap-6 text-xl font-semibold">
+            <Link href="/pricing">Pricing</Link>
+            <Link href="/faqs">FAQs</Link>
+            <Link href="/docs">Docs</Link>
+          </div>
+        </SignedOut>
         <div className="flex gap-6 items-center">
           {!userId ? (
             <Button>

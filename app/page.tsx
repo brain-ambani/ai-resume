@@ -1,9 +1,12 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Dashboard from "./dashboard/[[...dasboard]]/page";
+import { checkUser } from "@/lib/checkUser";
 
-export default function Home() {
+export default async function Home() {
+  const user = await checkUser();
+
   return (
-    <main className="flex  items-center justify-center h-full">
+    <main className="flex  h-full">
       <SignedIn>
         <Dashboard />
       </SignedIn>
