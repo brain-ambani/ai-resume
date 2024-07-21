@@ -8,9 +8,11 @@ const Dashboard = async () => {
     redirect("/");
   }
   return (
-    <div>
-      <p>Welcome, {user?.firstName}</p>
-      <h2>This is the dashboard page</h2>
+    <div className="my-8 border h-full w-full">
+      <p className="text-2xl">Welcome, {user?.firstName}</p>
+      <h2 className="mt-4 text-xl">
+        Create amazing resumes with the help of AI
+      </h2>
     </div>
   );
 };
