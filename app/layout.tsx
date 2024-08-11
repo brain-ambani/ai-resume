@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider"
 import {
   ClerkLoaded,
   ClerkLoading,
   ClerkProvider,
 
 } from '@clerk/nextjs'
+import Loader from "@/components/loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,21 +26,14 @@ export default function RootLayout({
       
    
     <html lang="en">
-      <body className={inter.className}>
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-           
+      <body className={`${inter.className}  min-h-screen h-screen overflow-hidden flex flex-col `}>
+     
            <ClerkLoading>
-              <div>Clerk is loading...</div>
+           <Loader/>
             </ClerkLoading>
             <ClerkLoaded>
               {children}
             </ClerkLoaded>
-        </ThemeProvider>
         </body>
     </html>
     </ClerkProvider>
