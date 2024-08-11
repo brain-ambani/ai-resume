@@ -1,10 +1,10 @@
-import { ModeToggle } from "@/components/themeToggle";
-import { Button } from "@/components/ui/button";
+import Hero from "@/components/hero";
+import Navbar from "@/components/navbar";
+
 
 export default function Home() {
-  return <main className="flex gap-6">
-    <p>This is a saas project</p>
-    <Button>Get Started</Button>
-    <ModeToggle/>
+  return <main className="container">
+    <Navbar/>
+    <Hero/>
   </main>;
 }

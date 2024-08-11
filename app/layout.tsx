@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import {
+  ClerkLoaded,
+  ClerkLoading,
   ClerkProvider,
 
 } from '@clerk/nextjs'
@@ -32,7 +34,12 @@ export default function RootLayout({
             disableTransitionOnChange
           >
            
-        {children}
+           <ClerkLoading>
+              <div>Clerk is loading...</div>
+            </ClerkLoading>
+            <ClerkLoaded>
+              {children}
+            </ClerkLoaded>
         </ThemeProvider>
         </body>
     </html>
