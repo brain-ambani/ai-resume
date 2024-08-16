@@ -9,7 +9,7 @@ export default function Hero() {
           Your ultimate Ai Resume builder
         </h2>
 
-        <p className="mt-2 text-3xl text-center font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <p className="mt-2 text-3xl text-center font-bold tracking-tight bg-gradient-to-r from-indigo-900 to-pink-300 bg-clip-text text-transparent  sm:text-6xl">
           Build a job tailored resume with AI
         </p>
         <p className="mt-6 text-center text-lg leading-8 text-gray-600">
