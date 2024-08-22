@@ -1,5 +1,5 @@
 "use client";
-import { PlusCircleIcon } from "lucide-react";
+import { Loader2Icon, PlusCircleIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 
@@ -18,12 +18,13 @@ export default function PlaceholderResume() {
   const router = useRouter();
 
   const [openDialog, setOpenDialog] = useState(false);
-
   const [resumeTitle, setResumeTime] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // Check if user is Free tier and push to upgrade page, else create the title of the resume and push to the create resume page
 
   const onCreate = async () => {
+    setLoading(true);
     try {
       const response = await fetch("/api/resumes/create", {
         method: "POST",
@@ -38,11 +39,13 @@ export default function PlaceholderResume() {
       }
 
       const { resume } = await response.json();
+      setLoading(false);
 
       // Redirect to the edit resume page with the newly created resume ID
       router.push(`/resumes/${resume.id}/edit`);
     } catch (error) {
       console.error(error);
+      setLoading(false);
     }
   };
   return (
@@ -70,8 +73,11 @@ export default function PlaceholderResume() {
               <Button variant="ghost" onClick={() => setOpenDialog(false)}>
                 Cancel
               </Button>
-              <Button onClick={() => onCreate()} disabled={!resumeTitle}>
-                Create
+              <Button
+                onClick={() => onCreate()}
+                disabled={!resumeTitle || loading}
+              >
+                {loading ? <Loader2Icon className="animate-spin" /> : "Create"}
               </Button>
             </div>
           </DialogHeader>
