@@ -26,7 +26,7 @@ export default function PlaceholderResume() {
   const onCreate = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/resumes/create", {
+      const response = await fetch("/api/resume/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
