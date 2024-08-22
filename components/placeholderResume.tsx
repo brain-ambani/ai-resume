@@ -42,7 +42,7 @@ export default function PlaceholderResume() {
       setLoading(false);
 
       // Redirect to the edit resume page with the newly created resume ID
-      router.push(`/resumes/${resume.id}/edit`);
+      router.push(`dashboard/resume/${resume.id}/edit`);
     } catch (error) {
       console.error(error);
       setLoading(false);
