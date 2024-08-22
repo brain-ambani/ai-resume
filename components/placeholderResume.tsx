@@ -38,7 +38,6 @@ export default function PlaceholderResume() {
       }
 
       const { resume } = await response.json();
-      console.log(resume);
 
       // Redirect to the edit resume page with the newly created resume ID
       router.push(`/resumes/${resume.id}/edit`);
