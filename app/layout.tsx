@@ -20,7 +20,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${inter.className}  min-h-screen h-screen overflow-hidden flex flex-col `}
+          className={`${inter.className}  min-h-screen h-screen flex flex-col `}
         >
           <ClerkLoading>
             <Loader />
