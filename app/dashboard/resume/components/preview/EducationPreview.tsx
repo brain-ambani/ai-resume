@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExperiencePreview = ({ resumeInfo }: { resumeInfo: any }) => {
+const EducationPreview = ({ resumeInfo }: { resumeInfo: any }) => {
   return (
     <div className="my-6">
       <h2
@@ -9,7 +9,7 @@ const ExperiencePreview = ({ resumeInfo }: { resumeInfo: any }) => {
           color: resumeInfo?.themeColor,
         }}
       >
-        Professional Experience
+        Education
       </h2>
       <hr
         style={{
@@ -17,8 +17,8 @@ const ExperiencePreview = ({ resumeInfo }: { resumeInfo: any }) => {
         }}
       />
 
-      {resumeInfo?.experience.map(
-        (experience: any, index: React.Key | null | undefined) => (
+      {resumeInfo?.education.map(
+        (education: any, index: React.Key | null | undefined) => (
           <div key={index} className="my-5">
             <h2
               className="text-sm font-bold"
@@ -26,16 +26,15 @@ const ExperiencePreview = ({ resumeInfo }: { resumeInfo: any }) => {
                 color: resumeInfo?.themeColor,
               }}
             >
-              {experience?.title}
+              {education?.universityName}
             </h2>
             <h2 className="text-xs flex justify-between">
-              {experience?.companyName}, {experience?.city}, {experience?.state}
+              {education?.degree} in {education?.major}
               <span>
-                {experience?.startDate} -{" "}
-                {experience?.currentlyWorking ? "Present" : experience?.endDate}
+                {education?.startDate} - {education?.endDate}
               </span>
             </h2>
-            <p className="text-xs my-2">{experience?.workSummary}</p>
+            <p className="text-xs my-2">{education?.description}</p>
           </div>
         )
       )}
@@ -43,4 +42,4 @@ const ExperiencePreview = ({ resumeInfo }: { resumeInfo: any }) => {
   );
 };
 
-export default ExperiencePreview;
+export default EducationPreview;
