@@ -11,7 +11,9 @@ const PersonalDetail = ({ resumeInfo }: { resumeInfo: any }) => {
       >
         {resumeInfo?.firstName} {resumeInfo?.lastName}
       </h2>
-      <h2 className="text-center text-sm font-medium">{resumeInfo.jobTitle}</h2>
+      <h2 className="text-center text-sm font-medium">
+        {resumeInfo?.jobTitle}
+      </h2>
       <h2
         className="text-center font-normal text-xs"
         style={{

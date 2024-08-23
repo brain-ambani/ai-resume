@@ -1,6 +1,7 @@
 import { ResumeInfoContext } from "@/context/ResumeInfoContext";
 import React, { useContext } from "react";
 import PersonalDetail from "./preview/PersonalDetail";
+import SummaryPreview from "./preview/SummaryPreview";
 
 const ResumePreview = () => {
   const { resumeInfo, setResumeInfo } = useContext(ResumeInfoContext);
@@ -14,6 +15,7 @@ const ResumePreview = () => {
       {/* Personal details */}
       <PersonalDetail resumeInfo={resumeInfo} />
       {/* Summary */}
+      <SummaryPreview resumeInfo={resumeInfo} />
       {/* Professional Experience */}
       {/* Education */}
       {/* Skills */}
