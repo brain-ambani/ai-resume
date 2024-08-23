@@ -1,7 +1,19 @@
-import React from "react";
+import { ResumeInfoContext } from "@/context/ResumeInfoContext";
+import React, { useContext } from "react";
+import PersonalDetail from "./preview/PersonalDetail";
 
 const ResumePreview = () => {
-  return <div>ResumePreview</div>;
+  const { resumeInfo, setResumeInfo } = useContext(ResumeInfoContext);
+  return (
+    <div>
+      {/* Personal details */}
+      <PersonalDetail resumeInfo={resumeInfo} />
+      {/* Summary */}
+      {/* Professional Experience */}
+      {/* Education */}
+      {/* Skills */}
+    </div>
+  );
 };
 
 export default ResumePreview;
