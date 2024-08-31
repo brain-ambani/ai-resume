@@ -25,14 +25,15 @@ model User {
 }
 
 model Resume {
-  id String @id @default(uuid())
+  resumeId String @id @default(uuid())
   title String
   username String?
+  firstName String?
+  lastName String?
+  jobTitle String?
+  phone String?
   email String?
-  summary String?
-  experience String?
-  skills String?
-  education String?
+  
 
   // Relation to user
   userId String
